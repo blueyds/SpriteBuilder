@@ -14,7 +14,6 @@ public struct GameScene{
 	public init(_ scene: SceneProtocol){
 		self.delegate = scene	
 		buildScene()
-		self.scene.delegate = self.delegate
 		self.delegate.didLoad(to: self.scene)
 		self.scene.delegate = self.delegate.getSceneDelegate()
 	}
