@@ -8,7 +8,7 @@
 import Foundation
 import SpriteKit
 
-struct GameScene{
+public struct GameScene{
 	public var scene: SKScene = SKScene()
 	private var delegate: SceneProtocol
 	public init(_ scene: SceneProtocol){
