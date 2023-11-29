@@ -34,6 +34,10 @@ extension Modifier{
 public struct Position: Modifier{
 	public let x: Int
 	public let y: Int
+	public init(_ x: Int, _ y: Int){
+		self.x = x
+		self.y = y	
+	}
 	public func modify(node: SKNode) {
 		node.position = CGPoint(x: x, y: y)
 	}
@@ -43,6 +47,9 @@ public struct Position: Modifier{
 }
 public struct Name: Modifier{
 	public let name: String
+	public init(_ name: String){
+		self.mame = name
+	}
 	public func modify(node: SKNode) {
 		node.name = name
 	}
@@ -53,6 +60,9 @@ public struct Name: Modifier{
 
 public struct FillColor: Modifier{
 	public let color: GameColor
+	public init(_ color: GameColor){
+		self.color = color
+	}
 	public func modify(node: SKNode) {
 		if let shape = node as? SKShapeNode {
 			shape.fillColor = color.skColor

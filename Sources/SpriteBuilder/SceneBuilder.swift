@@ -13,6 +13,9 @@ public enum SKSceneBuilder{
 
 public struct BackgroundColor: Modifier{
 	public let color: GameColor
+	public init(_ color: GameColor){
+		self.color = color
+	}
 	public func modify(scene: SKScene) {
 		scene.backgroundColor = color.skColor
 	}
@@ -20,6 +23,10 @@ public struct BackgroundColor: Modifier{
 public struct Size: Modifier{
 	public let width: Double
 	public let height: Double
+	public init(width: Double, height: Double){
+		self.width = width
+		self.height = height
+	}
 	public func modify(scene: SKScene) {
 		scene.size = CGSize(width: width, height: height)
 	}
