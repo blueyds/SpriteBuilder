@@ -11,5 +11,9 @@ import SpriteKit
 
 public protocol SceneProtocol: AnyObject, SKSceneDelegate{
 	@ModifierBuilder var body: [Modifier] { get }
+	func didLoad(to: SKScene)
+}
 
+extension SceneProtocol{
+	public func didLoad(to: SKScene) { }
 }
