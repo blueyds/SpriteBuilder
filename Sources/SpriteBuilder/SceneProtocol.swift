@@ -10,6 +10,6 @@ import SpriteKit
 
 
 public protocol SceneProtocol: AnyObject, SKSceneDelegate{
-	@ModifierBuilder var body: [Modifier] { }
+	@ModifierBuilder var body: [Modifier] { get }
 
 }
