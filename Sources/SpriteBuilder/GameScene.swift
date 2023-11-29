@@ -12,8 +12,9 @@ public struct GameScene{
 	public var scene: SKScene = SKScene()
 	private var delegate: SceneProtocol
 	public init(_ scene: SceneProtocol){
-		self.delegate = scene
+		self.delegate = scene	
 		buildScene()
+		self.scene.delegate = self.delegate
 	}
 	private func buildScene(){
 		delegate.body.forEach(){
