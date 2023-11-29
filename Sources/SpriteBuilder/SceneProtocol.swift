@@ -9,16 +9,7 @@ import Foundation
 import SpriteKit
 
 
-public protocol SceneProtocol {
-	@ModifierBuilder var body: [Modifier] { get }
+public protocol SceneProtocol: AnyObject, SKSceneDelegate{
+	@ModifierBuilder var body: [Modifier] { }
 
-	func setSKSceneReference(_ : SKScene)
-	func update(_ : TimeInterval)
-
-}
-
-extension SceneProtocol{
-	public func setSKSceneReference(_ scene: SKScene) { }
-	// define a default update that does nothing
-	public func update(_ currentTime: TimeInterval) { }
 }

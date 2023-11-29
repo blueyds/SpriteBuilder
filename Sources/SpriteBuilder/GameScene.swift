@@ -13,7 +13,6 @@ public struct GameScene{
 	private var delegate: SceneProtocol
 	public init(_ scene: SceneProtocol){
 		self.delegate = scene
-		self.delegate.setSKSceneReference(self.scene)
 		buildScene()
 	}
 	private func buildScene(){
