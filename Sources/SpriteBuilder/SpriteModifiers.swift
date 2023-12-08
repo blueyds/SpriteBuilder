@@ -13,7 +13,7 @@ public struct Texture: Modifier{
 }
 
 public struct BlendMode: Modifier{
-	public let mode: SKBlendMode
+	let mode: SKBlendMode
 	public init(_ mode: SKBlendMode){
 		self.mode = mode
 	}
@@ -21,6 +21,17 @@ public struct BlendMode: Modifier{
 		if let sprite = node as? SKSpriteNode{
 			sprite.blendMode = mode
 		}
+	}
+}
+
+public struct Scale:Modifier{
+	let scale: CGSize
+	public init(_ by: Double){
+		scale = CGSize(width: by, height: by)
+	}
+	public func modify(node: SKNode){
+		node.xScale = CGFloat(scale.width)
+		node.yScale = CGFloat(scale.height)
 	}
 }
 
