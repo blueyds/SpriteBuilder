@@ -15,7 +15,7 @@ public struct GameScene{
 		self.delegate = scene	
 		buildScene()
 		self.delegate.didLoad(to: self.scene)
-		self.scene.delegate = self.delegate.getSceneDelegate()
+		//self.scene.delegate = self.delegate.getSceneDelegate()
 	}
 	private func buildScene(){
 		delegate.body.forEach(){
