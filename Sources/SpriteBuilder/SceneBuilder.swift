@@ -31,6 +31,27 @@ public struct Size: Modifier{
 		scene.size = CGSize(width: width, height: height)
 	}
 }
+
+public struct Delegate: Modifier{
+	public let delegate: SKSceneDelegate
+	public init(_ delegate: SKSceneDelegate){
+		self.delegate = delegate
+	}
+	public func modify(scene: SKScene){
+		scene.delegate = self.delegate
+	}
+}
+
+public struct AnchorPoint: Modifier{
+	public let anchor: CGPoint
+	public init(x: Double, y:Double){
+		self.anchor = CGPoint(x: x, y: y)
+	}
+	public func modify(scene: SKScene){
+		scene.anchorPoint = anchor 
+	}
+}
+
 public struct Children: Modifier{
 	public let children: [ SKNode]
 	public init(@SKSceneBuilder _ builder: ()-> [SKNode]){
