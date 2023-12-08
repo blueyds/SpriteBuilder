@@ -12,4 +12,15 @@ public struct Texture: Modifier{
 	}
 }
 
+public struct BlendMode: Modifier{
+	public let mode: SKBlendMode
+	public init(_ mode: SKBlendMode){
+		self.mode = mode
+	}
+	public func modify(node: SKNode){
+		if let sprite = node as? SKSpriteNode{
+			sprite.blendMode = mode
+		}
+	}
+}
 
