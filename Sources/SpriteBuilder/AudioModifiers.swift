@@ -19,7 +19,7 @@ public struct AutoPlayLoop: Modifier{
 	}
 	public func modify(node: SKNode){
 		if let audio = node as? SKAudioNode{
-			audio.autoPlayLooped = looped
+			audio.autoPlayLoop = looped
 		}
 	}
 }
