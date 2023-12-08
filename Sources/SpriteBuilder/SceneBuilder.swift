@@ -47,6 +47,11 @@ public struct AnchorPoint: Modifier{
 	public init(x: Double, y:Double){
 		self.anchor = CGPoint(x: x, y: y)
 	}
+	public func modify(node: SKNode){
+		if let sprite = node as? SKSpriteNode{
+			sprite.anchorPoint = anchor
+		}
+	}
 	public func modify(scene: SKScene){
 		scene.anchorPoint = anchor 
 	}
