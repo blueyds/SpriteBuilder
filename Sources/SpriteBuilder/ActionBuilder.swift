@@ -46,6 +46,28 @@ public struct ActionRepeatSequence: ActionModifier{
 		}
 	}
 }
+public struct ActionRepeatGroup: ActionModifier{
+	public let action: SKAction
+	public let name: String
+	public init(_ name: String = "", _ cycles: Int? = nil, @ActionBuilder _ builder: ()-> [SKAction]){
+	if cycles == nil {
+		action = SKAction.repeatForever(SKAction.group(builder()))
+	}else {
+		action = SKAction.repeat(SKAction.grouper(builder()), count: cycles!)
+	}
+		self.name = name
+	}
+
+	public init(_ name: String, _ cycles: Int? = nil, _ modifiers: [ActionModifier]  ) {
+		self.name = name
+		let actions = modifiers.compactMap({$0.action})
+		if cycles == nil{
+			action = SKAction.repeatForever(SKAction.group(actions))
+		} else {
+			action = SKAction.repeat(SKAction.group(actions), count: cycles!)
+		}
+	}
+}
 
 
 extension  ActionModifier{
