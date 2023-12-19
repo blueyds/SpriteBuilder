@@ -53,7 +53,7 @@ public struct ActionRepeatGroup: ActionModifier{
 	if cycles == nil {
 		action = SKAction.repeatForever(SKAction.group(builder()))
 	}else {
-		action = SKAction.repeat(SKAction.grouper(builder()), count: cycles!)
+		action = SKAction.repeat(SKAction.group(builder()), count: cycles!)
 	}
 		self.name = name
 	}
