@@ -2,7 +2,7 @@
 import SpriteKit
 
 
-class SceneWrapper<Scene> where Scene: SceneProtocol{
+public class SceneWrapper<Scene> where Scene: SceneProtocol{
     public let scene: SKScene
     public let delegate: Scene
     public init(_ delegate: Scene){
