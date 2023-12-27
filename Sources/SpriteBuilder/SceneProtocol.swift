@@ -16,4 +16,14 @@ public protocol SceneProtocol{
 
 extension SceneProtocol{
 	public func didLoad(to: SKScene) { }
+	public func build(scene: SKScene){
+		body.forEach(){
+            $0.modify(scene: scene)
+        }
+	}
+	public func build()->SKScene{
+		let scene = SKScene()
+		build(scene: scene)
+		return scene
+	}
 }
