@@ -10,8 +10,8 @@ import SpriteKit
 
 public struct GameScene{
 	public var scene: SKScene = SKScene()
-	private var delegate: SceneProtocol
-	public init(_ scene: SceneProtocol){
+	private var delegate: any SceneProtocol
+	public init(_ scene: any SceneProtocol){
 		self.delegate = scene	
 		buildScene()
 		self.delegate.didLoad(to: self.scene)

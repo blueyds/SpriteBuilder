@@ -25,13 +25,20 @@ public struct BlendMode: Modifier{
 }
 
 public struct Scale:Modifier{
-	let scale: CGSize
-	public init(_ by: Double){
-		scale = CGSize(width: by, height: by)
+	let xScale: CGFloat
+	let yScale: CGFloat
+	public init(by value: Double){
+		let v = CGFloat(value)
+		xScale = v
+		yScale = v
+	}
+	public init(by value: CGFloat){
+		xScale = value
+		yScale = value
 	}
 	public func modify(node: SKNode){
-		node.xScale = CGFloat(scale.width)
-		node.yScale = CGFloat(scale.height)
+		node.xScale = xScale
+		node.yScale = yScale
 	}
 }
 
