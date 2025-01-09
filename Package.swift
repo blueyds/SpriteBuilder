@@ -11,17 +11,13 @@ let package = Package(
             name: "SpriteBuilder",
             targets: ["SpriteBuilder"]),
     ],
-	dependencies: [
-			.package(url: "https://github.com/blueyds/GameColor.git", from: "1.0.0")
-		],
-    targets: [
+	targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "SpriteBuilder", 
-			dependencies: ["GameColor"]), 
+            name: "SpriteBuilder"), 
         .testTarget(
             name: "SpriteBuilderTests",
-            dependencies: ["SpriteBuilder", "GameColor"]),
+            dependencies: ["SpriteBuilder"]),
     ]
 )

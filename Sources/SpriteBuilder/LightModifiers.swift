@@ -1,38 +1,38 @@
 import SpriteKit
-import GameColor
+
 
 public struct AmbientColor: Modifier{
-	public let color: GameColor
-	public init(_ color: GameColor) {
+	public let color: UIColor
+	public init(_ color: UIColor) {
 		self.color = color
 	}
 	public func modify(node: SKNode){
 		if let light = node as? SKLightNode{
-			light.ambientColor = color.skColor
+			light.ambientColor = color
 		}
 	}
 }
 
 public struct LightColor: Modifier{
-	public let color: GameColor
-	public init(_ color: GameColor) {
+	public let color: UIColor
+	public init(_ color: UIColor) {
 		self.color = color
 	}
 	public func modify(node: SKNode){
 		if let light = node as? SKLightNode{
-			light.lightColor = color.skColor
+			light.lightColor = color
 		}
 	}
 }
 
 public struct ShadowColor: Modifier{
-	public let color: GameColor
-	public init(_ color: GameColor) {
+	public let color: UIColor
+	public init(_ color: UIColor) {
 		self.color = color
 	}
 	public func modify(node: SKNode){
 		if let light = node as? SKLightNode{
-			light.shadowColor = color.skColor
+			light.shadowColor = color
 		}
 	}
 }

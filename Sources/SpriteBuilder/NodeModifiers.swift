@@ -1,9 +1,9 @@
 import SpriteKit
 
 public struct Position: Modifier{
-	public let x: Int
-	public let y: Int
-	public init(_ x: Int, _ y: Int){
+	public let x: CGFloat
+	public let y: CGFloat
+	public init(_ x: CGFloat, _ y: CGFloat){
 		self.x = x
 		self.y = y	
 	}

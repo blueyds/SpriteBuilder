@@ -1,5 +1,5 @@
 import SpriteKit
-import GameColor
+
 
 
 @resultBuilder
@@ -12,12 +12,12 @@ public enum SKSceneBuilder{
 
 
 public struct BackgroundColor: Modifier{
-	public let color: GameColor
-	public init(_ color: GameColor){
+	public let color: UIColor
+	public init(_ color: UIColor){
 		self.color = color
 	}
 	public func modify(scene: SKScene) {
-		scene.backgroundColor = color.skColor
+		scene.backgroundColor = color
 	}
 }
 public struct Size: Modifier{
