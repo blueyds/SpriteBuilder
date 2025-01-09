@@ -19,9 +19,9 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "SpriteBuilder", 
-			dependencies: ["GameColor"]), 
+			dependencies: ["SwiftGameColor"]), 
         .testTarget(
             name: "SpriteBuilderTests",
-            dependencies: ["SpriteBuilder", "GameColor"]),
+            dependencies: ["SpriteBuilder", "SwiftGameColor"]),
     ]
 )
